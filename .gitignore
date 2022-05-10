@@ -11,7 +11,7 @@ __pycache__
 /*.log
 selenium/
 
-passwords.txt
+*.txt
 
 .env
 *.hdf5
