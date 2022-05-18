@@ -29,6 +29,8 @@ select 'smoking', Qty_Adults, Year from smoking
 
 select * from metrics;
 
+select * from complete;
+
 select * from metricas;
 DELETE FROM metricas WHERE metric='metric';
 
@@ -64,3 +66,47 @@ ADD COLUMN `Chicago` VARCHAR(45) NULL DEFAULT 'Chicago' after `City`;
 
 SELECT * FROM rates;
 DELETE FROM rates WHERE metric='metric';
+
+SELECT * FROM heart_disease_mortality;
+
+ALTER TABLE `heart_disease_mortality`
+DROP COLUMN `City`;
+
+ALTER TABLE `proyecto`.`heart_disease_mortality` 
+ADD COLUMN `Chicago` VARCHAR(45) NULL DEFAULT 'Chicago' after `Year`;
+
+select * from drink;
+
+create table indicators(
+select a.*, b.alcohol from indicadores a
+join alcohol b on a.City=b.City and a.year = b.year);
+
+select * from indicadores;
+
+create table averages(
+select 'Chicago', year ,avg(diabetes), avg(fruits),avg(hipertension),avg(inactivity),avg(obesity),avg(smoking),avg(soda),avg(alcohol) from indicadores);
+
+select distinct `Facility Type`  from chicago_restaurants;
+
+
+#select count(*), City, Latitude, Longitude, year 
+#from(
+#select * from chicago_restaurants
+#where (`Facility Type` like 'Restaurant' or `Facility Type` like 'tavern' or `Facility Type` like 'bakery'
+#or `Facility Type` like 'deli' or `Facility Type` like 'cafeteria' or `Facility Type` like 'smokehouse'
+#or `Facility Type` like 'banquet' or `Facility Type` like 'donut' or `Facility Type` like 'ice cream'
+#or `Facility Type` like 'candy' or `Facility Type` like 'truck' or `Facility Type` like 'prepared'
+#or `Facility Type` like 'vending' or `Facility Type` like 'smoothie' or `Facility Type` like 'hot dog'
+#or `Facility Type` like 'dining' or `Facility Type` like 'taqueria') as A
+#group by City,Latitude, Longitude;;--
+
+--
+
+create table restaurants_filtrados(
+select * from chicago_restaurants
+where (`Facility Type` like 'Restaurant' or `Facility Type` like 'tavern' or `Facility Type` like 'bakery'
+or `Facility Type` like 'deli' or `Facility Type` like 'cafeteria' or `Facility Type` like 'smokehouse'
+or `Facility Type` like 'banquet' or `Facility Type` like 'donut' or `Facility Type` like 'ice cream'
+or `Facility Type` like 'candy' or `Facility Type` like 'truck' or `Facility Type` like 'prepared'
+or `Facility Type` like 'vending' or `Facility Type` like 'smoothie' or `Facility Type` like 'hot dog'
+or `Facility Type` like 'dining' or `Facility Type` like 'taqueria'));
