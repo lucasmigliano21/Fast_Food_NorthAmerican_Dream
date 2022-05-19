@@ -2,10 +2,11 @@
 
 # Final project
 
-### The objective of this competition is to determine a model that can predict the price of each AirBnB apartment in Amsterdam.
+### The objective of this project is to analyze health habits and indicators of Chicago's population between 2014-2020.
 
 ### Data
-
+Data related to health indicators and restauratns were both extracted from official sources, the [Chicago Atlas Health](https://chicagohealthatlas.org/).
+and the [Chicago Data Portal](https://data.cityofchicago.org/).
 
 ### Processing/cleaning the dataset:
 
