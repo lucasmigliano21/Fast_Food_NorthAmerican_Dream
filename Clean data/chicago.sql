@@ -110,3 +110,8 @@ or `Facility Type` like 'banquet' or `Facility Type` like 'donut' or `Facility T
 or `Facility Type` like 'candy' or `Facility Type` like 'truck' or `Facility Type` like 'prepared'
 or `Facility Type` like 'vending' or `Facility Type` like 'smoothie' or `Facility Type` like 'hot dog'
 or `Facility Type` like 'dining' or `Facility Type` like 'taqueria'));
+
+select * from chicago_restaurants;
+
+select count(*), year from chicago_restaurants
+group by year;
